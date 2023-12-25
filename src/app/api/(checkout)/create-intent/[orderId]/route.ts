@@ -1,9 +1,11 @@
-import  prisma  from "@/utils/connect";
+import prisma  from "@/utils/connect";
 import { NextRequest, NextResponse } from "next/server";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-export async function POST(req: NextRequest,res: NextResponse,{ params }: { params: { orderId: string } }
+export async function POST(
+  request: NextRequest,
+  { params }: { params: { orderId: string } }
 ) {
   const { orderId } = params;
 
@@ -15,7 +17,7 @@ export async function POST(req: NextRequest,res: NextResponse,{ params }: { para
 
   if (order) {
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: 100 * 100,
+      amount: 100 * 100 ,
       currency: "usd",
       automatic_payment_methods: {
         enabled: true,
