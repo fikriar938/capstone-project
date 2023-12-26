@@ -28,7 +28,7 @@ if(status === "unauthenticated"){
 
   const mutation = useMutation({
     mutationFn: ({id,status}: {id: string, status:string}) => {
-      return fetch(`http://localhost:3000/api/orders/${id}`,{
+      return fetch( process.env.URL + `/api/orders/${id}`,{
         method: "PUT",
         headers:{
           "Content-Type" : "application/json"
