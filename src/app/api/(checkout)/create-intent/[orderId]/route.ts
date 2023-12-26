@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-export async function POST(
+export async function PUT(
   request: NextRequest| Request,
   { params }: { params: { orderId: string }, }
 ) {
