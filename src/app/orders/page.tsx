@@ -2,6 +2,7 @@
 import { OrderType } from "@/types/types";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { toast } from "react-toastify";
@@ -28,7 +29,7 @@ if(status === "unauthenticated"){
 
   const mutation = useMutation({
     mutationFn: ({id,status}: {id: string, status:string}) => {
-      return fetch( process.env.URL + `/api/orders/${id}`,{
+      return fetch(  `http://localhost:3000/api/orders/${id}`,{
         method: "PUT",
         headers:{
           "Content-Type" : "application/json"
@@ -78,7 +79,7 @@ if(status === "unauthenticated"){
                   <form className="flex items-center justify-center gap-4 " onSubmit={(e)=>handleUpdate(e,item.id)}>
                     <input placeholder={item.status} className="p-2 ring-1 ring-red-100 rounded-md"/>
                     <button className="bg-red-400 p-2 rounded-full">
-                      <img src="/edit.png" alt="" width={20} height={20}/>
+                      <Image src="/edit.png" alt="" width={20} height={20}/>
                     </button>
                   </form>
                 </td>
