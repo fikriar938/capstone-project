@@ -22,7 +22,7 @@ if(status === "unauthenticated"){
     
     queryKey: ['orders'],
     queryFn: () =>
-      fetch("http://127.0.0.1:3000/api/orders").then(
+      fetch('http://127.0.0.1:3000/api/orders').then(
         (res) => res.json(),
       ),
   })
