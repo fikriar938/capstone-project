@@ -18,7 +18,8 @@ const PayPage = ({params} : {params: {id:string}}) => {
             try {
                 const apiUrl = process.env.NEXT_PUBLIC_API_URL
                 const res = await fetch(  `${apiUrl}/api/create-intent/${id}`,{
-                    method: "POST"
+                    method: "POST",
+                    cache: "no-store"
                 });
                 const data = await res.json();
                 setClientSecret(data.clientSecret);

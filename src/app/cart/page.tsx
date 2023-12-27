@@ -24,6 +24,7 @@ const CartPage = () => {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL
         const res = await fetch( `${apiUrl}/api/orders`, {
           method: "POST",
+          cache: "no-store",
           headers: {"Content-Type":"application/json"},
           body: JSON.stringify({
             price: totalPrice,

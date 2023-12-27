@@ -20,7 +20,8 @@ const DeleteButton = ({id}: {id:string}) => {
     const handleDelete = async () => {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL
         const res = await fetch( `${apiUrl}/api/products/${id}`,{
-            method: "DELETE"
+            method: "DELETE",
+            cache: "no-store"
         })
         if(res.status===200){
             router.push("/menu")

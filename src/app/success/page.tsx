@@ -14,6 +14,7 @@ const SuccessPage = () => {
       try {
         await fetch(  `${apiUrl}/confirm/${payment_intent}`, {
           method: "PUT",
+          cache: "no-store"
         });
         setTimeout(() => {
           router.push("/orders");

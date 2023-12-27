@@ -33,6 +33,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL
     mutationFn: ({id,status}: {id: string, status:string}) => {
       return fetch(  `${apiUrl}/api/orders/${id}`,{
         method: "PUT",
+        cache: "no-store",
         headers:{
           "Content-Type" : "application/json"
         },
