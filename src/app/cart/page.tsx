@@ -22,7 +22,7 @@ const CartPage = () => {
     }else{
       try {
         
-        const res = await fetch( `http://127.0.0.1:3000/api/orders`, {
+        const res = await fetch( "http://127.0.0.1:3000/api/orders", {
           method: "POST",
           cache: "no-store",
           headers: {"Content-Type":"application/json"},
