@@ -12,7 +12,7 @@ const SuccessPage = () => {
     const makeRequest = async () => {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL
+        
         await fetch(  `${apiUrl}/api/confirm/${payment_intent}`, {
           method: "PUT",
           cache: "no-store"
