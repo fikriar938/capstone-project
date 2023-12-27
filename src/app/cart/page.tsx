@@ -21,8 +21,8 @@ const CartPage = () => {
       router.push("/login")
     }else{
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL
-        const res = await fetch( `${apiUrl}/api/orders`, {
+
+        const res = await fetch( 'http://127.0.0.1:3000/api/orders', {
           method: "POST",
           cache: "no-store",
           headers: {"Content-Type":"application/json"},

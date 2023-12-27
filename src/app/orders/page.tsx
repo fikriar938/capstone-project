@@ -18,12 +18,12 @@ if(status === "unauthenticated"){
   router.push("/");
 }
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
   const { isLoading, error, data } = useQuery({
     
     queryKey: ['orders'],
     queryFn: () =>
-      fetch(`${apiUrl}/api/orders`).then(
+      fetch('http://127.0.0.1:3000/api/orders').then(
         (res) => res.json(),
       ),
   })
