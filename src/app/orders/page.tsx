@@ -17,10 +17,12 @@ const router = useRouter();
 if(status === "unauthenticated"){
   router.push("/");
 }
+const apiUrl = process.env.NEXT_PUBLIC_API_URL
   const { isLoading, error, data } = useQuery({
+    
     queryKey: ['orders'],
     queryFn: () =>
-      fetch('http://localhost:3000/api/orders').then(
+      fetch(`${apiUrl}/api/orders`).then(
         (res) => res.json(),
       ),
   })
@@ -29,7 +31,7 @@ if(status === "unauthenticated"){
 
   const mutation = useMutation({
     mutationFn: ({id,status}: {id: string, status:string}) => {
-      return fetch(  `http://localhost:3000/api/orders/${id}`,{
+      return fetch(  `${apiUrl}/api/orders/${id}`,{
         method: "PUT",
         headers:{
           "Content-Type" : "application/json"
