@@ -25,11 +25,11 @@ const CountDown = () => {
     };
   });
   return (
-    
+    <>
       <span className="font-bold text-5xl text-yellow-300">
         {d}:{h}:{m}:{s}
       </span>
-    
+    </>
   );
 };
 

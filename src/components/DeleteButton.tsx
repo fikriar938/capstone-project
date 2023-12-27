@@ -18,7 +18,8 @@ const DeleteButton = ({id}: {id:string}) => {
         return;
     }
     const handleDelete = async () => {
-        const res = await fetch( `http://localhost:3000/api/products/${id}`,{
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL
+        const res = await fetch( `${apiUrl}/api/products/${id}`,{
             method: "DELETE"
         })
         if(res.status===200){
