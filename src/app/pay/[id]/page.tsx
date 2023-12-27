@@ -16,8 +16,8 @@ const PayPage = ({params} : {params: {id:string}}) => {
     useEffect(() =>{
         const makeRequest = async () => {
             try {
-                
-                const res = await fetch(  `http://127.0.0.1:3000/api/create-intent/${id}`,{
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL
+                const res = await fetch(  `${apiUrl}/api/create-intent/${id}`,{
                     method: "POST",
                     cache: "no-store"
                 });

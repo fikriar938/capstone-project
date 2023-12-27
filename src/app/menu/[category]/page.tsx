@@ -4,8 +4,8 @@ import Link from "next/link";
 import React from "react";
 
 const getData = async (category:string)=>{
-  
-  const res = await fetch( `http://127.0.0.1:3000/api/products?cat=${category}`,{
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+  const res = await fetch( `${apiUrl}/api/products?cat=${category}`,{
     cache:"no-store"
   })
 
