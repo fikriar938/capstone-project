@@ -23,7 +23,7 @@ if(status === "unauthenticated"){
     
     queryKey: ['orders'],
     queryFn: () =>
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders`).then(
+      fetch('http://localhost:3000/api/orders').then(
         (res) => res.json(),
       ),
   })
@@ -32,7 +32,7 @@ if(status === "unauthenticated"){
 
   const mutation = useMutation({
     mutationFn: ({id,status}: {id: string, status:string}) => {
-      return fetch(  `${process.env.NEXT_PUBLIC_API_URL}/api/orders/${id}`,{
+      return fetch(  `http://localhost:3000/api/orders/${id}`,{
         method: "PUT",
         cache: "no-store",
         headers:{
