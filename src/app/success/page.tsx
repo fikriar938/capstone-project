@@ -10,10 +10,10 @@ const SuccessPage = () => {
 
   useEffect(() => {
     const makeRequest = async () => {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL
+      
       try {
         
-        await fetch(  `${apiUrl}/api/confirm/${payment_intent}`, {
+        await fetch(  `${process.env.NEXT_PUBLIC_API_URL}/api/confirm/${payment_intent}`, {
           method: "PUT",
           cache: "no-store"
         });
