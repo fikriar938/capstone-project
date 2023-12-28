@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+import dns from 'node:dns';
+const nextConfig = {   }
+dns.setDefaultResultOrder('ipv4first');
 
 module.exports = nextConfig
