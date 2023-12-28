@@ -1,7 +1,7 @@
 import DeleteButton from "@/components/DeleteButton";
 import Price from "@/components/Price";
 import { ProductType } from "@/types/types";
-import Image from "next/image";
+import Image from "next/image.js";
 import React from "react";
 
 
