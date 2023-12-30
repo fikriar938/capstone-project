@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import CountDown from "./CountDown";
-import Countdown from "react-countdown/dist/LegacyCountdown";
+
 
 const Offer = () => {
   return (
@@ -13,7 +12,7 @@ const Offer = () => {
           Progressively simplify effective e-toilers and process-centric methods
           of empowerment. Quickly pontificate parallel.
         </p>
-        <Countdown />
+        
         <button className="bg-red-500 text-white rounded-md py-3 px-6">Order Now</button>
       </div>
       {/* IMAGE CONTAINER */}
