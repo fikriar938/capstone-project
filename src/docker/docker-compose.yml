@@ -1,13 +1,20 @@
-services:
 
-  db:
-    image: postgres
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
     restart: always
+    ports:
+      - "5432:5432"  # Mengaitkan port lokal ke port PostgreSQL
     environment:
+      POSTGRES_DB: mydb
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: mydb
-    ports:
-      - 5432:5432
+    networks:
+      - postgres-network
 
+networks:
+  postgres-network:
+    driver: bridge
 
